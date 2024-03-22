@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./playground.component.scss']
 })
 export class PlaygroundComponent {
-
+  lines = [1, 2, 3, 4, 5];
 }
