@@ -1,0 +1,26 @@
+:host {
+  .container {
+    max-width: 700px;
+    margin: 20px auto;
+    height: 95dvh;
+    background-color: rgb(74, 145, 74);
+    border: 1px solid green;
+    position: relative;
+  }
+  .post1, .post2 {
+    width: 150px;
+    background-color: black;
+    height: 2px;
+    position: absolute;
+    border: 1px solid white;
+  }
+  .post1{
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .post2{
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+  }
+}
