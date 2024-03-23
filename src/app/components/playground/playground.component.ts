@@ -73,11 +73,5 @@ export class PlaygroundComponent {
   onDrop(event: DragEvent) {
     event.preventDefault();
     this.element = null;
-    // Perform any additional logic here, such as positioning the dropped item
   }
-
-  // @HostListener('click', ['$event.target'])
-  // onClick(target: HTMLElement) {
-  //   console.log('Clicked element ID:', target.id);
-  // }
 }
