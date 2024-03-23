@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-.mark {
+
+.ball {
   width: 20px;
   height: 20px;
-  // background-color: red; /* Color of the mark */
+  left: var(--position-player1);
+  background-color: rgb(136, 213, 147); /* Color of the mark */
   border-radius: 50%; /* To make it circular */
   position: absolute;
 }

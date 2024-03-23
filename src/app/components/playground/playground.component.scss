@@ -1,93 +1,47 @@
 :host {
   --ground-width: 1200px;
   --line-color: rgba(255, 255, 255, .3);
+  --position-player1 : 40%;
   .container {
     max-width: var(--ground-width);
-    margin: 20px auto;
-    height: 95dvh;
+    margin: 24px auto;
+    height: 92dvh;
     background-image: url('../../../assets/images/playground.png');
-    padding: 22px;
+    background-size: cover;
+    padding-block: 14px;
   }
   .playground {
-    border: 1px solid rgba(255, 255, 255, .6);
+    // border: 1px solid rgba(255, 255, 255, .6);
     height: 100%;
+    width: 93.4%;
+    margin: auto;
     position: relative;
-  }
-  .post1, .post2 {
-    width: 20px;
-    height: 150px;
-    position: absolute;
-    border: 1px solid var(--line-color);
-    background-color: rgba(255, 255, 255, .4);
-  }
-  .post1{
-    top: 50%;
-    transform: translate(-22px, -50%);
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-  }
-  .post2{
-    top: 50%;
-    right: 0;
-    transform: translate(22px, -50%);
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    left: 12px;
   }
 
-  .panelty-area1, .panelty-area2 {
-    width: 50px;
-    height: 200px;
+  .player1 {
+    width: 20px;
+    height: 20px;
+    background-color: white; /* Color of the mark */
+    border-radius: 50%; /* To make it circular */
     position: absolute;
-    border: 1px solid var(--line-color);
   }
-  .panelty-area1{
-    top: 50%;
-    transform: translate( 0, -50%);
-  }
-  .panelty-area2{
-    top: 50%;
-    right: 0;
-    transform: translate( 0, -50%);
-  }
-  .d-area1, .d-area2 {
-    width: 250px;
-    height: 350px;
+
+  .player2 {
+    width: 20px;
+    height: 20px;
+    left: var(--position-player1);
+    background-color: red; /* Color of the mark */
+    border-radius: 50%; /* To make it circular */
     position: absolute;
-    border: 1px solid var(--line-color);
-    .panelty-circle {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, .6);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
   }
-  .d-area1{
-    top: 50%;
-    transform: translate( 0, -50%);
-  }
-  .d-area2{
-    top: 50%;
-    right: 0;
-    transform: translate( 0, -50%);
-  }
-  .center-line {
+
+  .mark {
+    width: 20px;
+    height: 20px;
+    left: var(--position-player1);
+    background-color: rgb(0, 255, 34); /* Color of the mark */
+    border-radius: 50%; /* To make it circular */
     position: absolute;
-    height: 100%;
-    border-left: 1px solid var(--line-color);
-    left: 50%;
-    transform: translateX(-50%);
-    .center-circle {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, .2);
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
   }
 }

@@ -7,44 +7,39 @@ import { Component } from '@angular/core';
 })
 export class PlaygroundComponent {
 
-  placePlayer(event: MouseEvent, color="white"): void {
+  ball: any = null;
+
+  placeBall(event: MouseEvent): void {
     // Get the clicked position relative to the div
-    const x = event.offsetX;
+    if(!this.ball){
+      const x = event.offsetX;
     const y = event.offsetY;
 
     // Create a mark (a small dot)
-    const mark = document.createElement('div');
-    mark.className = 'mark';
+    const ball = document.createElement('div');
+    this.ball = ball;
+    ball.className = 'ball';
 
     // Position the mark at the clicked coordinates
-    mark.style.left = x + 'px';
-    mark.style.top = y + 'px';
+    ball.style.left = x + 'px';
+    ball.style.top = y + 'px';
 
     // Add background color dynamically
-    mark.style.backgroundColor = color;
+    ball.title = x + '  ' + y;
 
     // Append the mark to the div
     const target = event.currentTarget as HTMLElement;
 
-    target.appendChild(mark);
+    target.appendChild(ball);
+    }
   }
-  placeBall(): void {
-    // Get the clicked position relative to the div
-    console.log('pressed key...');
-    // Create a mark (a small dot)
-    // const mark = document.createElement('div');
-    // mark.className = 'mark';
 
-    // // Position the mark at the clicked coordinates
-    // mark.style.left = 50 + 'px';
-    // mark.style.top = 50 + 'px';
-
-    // // Add background color dynamically
-    // mark.style.backgroundColor = "red";
-
-    // // Append the mark to the div
-    // const target = event.currentTarget as HTMLElement;
-
-    // target.appendChild(mark);
+  moveBall(event: MouseEvent): void {
+    const target = event.currentTarget as HTMLElement;
+    target.removeChild(this.ball);
+    console.log(this.ball.title.split(' '));
+    const [ x, z,  y] = this.ball.title.split(' ');
+    this.ball = null;
+    this.placeBall(event);
   }
 }
