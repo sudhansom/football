@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PlaygroundComponent {
 
-  placeBall(event: MouseEvent, color="white"): void {
+  placePlayer(event: MouseEvent, color="white"): void {
     // Get the clicked position relative to the div
     const x = event.offsetX;
     const y = event.offsetY;
@@ -27,5 +27,24 @@ export class PlaygroundComponent {
     const target = event.currentTarget as HTMLElement;
 
     target.appendChild(mark);
+  }
+  placeBall(): void {
+    // Get the clicked position relative to the div
+    console.log('pressed key...');
+    // Create a mark (a small dot)
+    // const mark = document.createElement('div');
+    // mark.className = 'mark';
+
+    // // Position the mark at the clicked coordinates
+    // mark.style.left = 50 + 'px';
+    // mark.style.top = 50 + 'px';
+
+    // // Add background color dynamically
+    // mark.style.backgroundColor = "red";
+
+    // // Append the mark to the div
+    // const target = event.currentTarget as HTMLElement;
+
+    // target.appendChild(mark);
   }
 }
