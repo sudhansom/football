@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-playground',
@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class PlaygroundComponent {
 
   ball: any = null;
+  playerToMove : any = null;
+  element: any;
 
   placeBall(event: MouseEvent): void {
     // Get the clicked position relative to the div
@@ -34,12 +36,48 @@ export class PlaygroundComponent {
     }
   }
 
+  getPosition(event: any){
+    return event.offsetX;
+  }
+
   moveBall(event: MouseEvent): void {
     const target = event.currentTarget as HTMLElement;
     target.removeChild(this.ball);
     console.log(this.ball.title.split(' '));
     const [ x, z,  y] = this.ball.title.split(' ');
     this.ball = null;
+    console.log('event',event.clientX, event.clientY);
     this.placeBall(event);
   }
+
+  @HostListener('dragstart', ['$event'])
+  onDragStart(event: DragEvent) {
+    console.log('dragged...', event)
+    this.playerToMove = event;
+    event.dataTransfer?.setData('text/plain', 'draggedItem');
+  }
+
+  @HostListener('dragover', ['$event.target', '$event'])
+  onDragOver(target: HTMLElement, event: DragEvent) {
+    event.preventDefault();
+     if(!this.element){
+      this.element = document.getElementById(target.id);
+     }
+
+    console.log('dragged1111...', target.id, event.screenX);
+    this.element.style.left = event.screenX + 'px';
+    this.element.style.top = event.screenY + 'px';
+  }
+
+  @HostListener('drop', ['$event'])
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    this.element = null;
+    // Perform any additional logic here, such as positioning the dropped item
+  }
+
+  // @HostListener('click', ['$event.target'])
+  // onClick(target: HTMLElement) {
+  //   console.log('Clicked element ID:', target.id);
+  // }
 }

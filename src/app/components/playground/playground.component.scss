@@ -1,7 +1,7 @@
 :host {
   --ground-width: 1200px;
   --line-color: rgba(255, 255, 255, .3);
-  --position-player1 : 40%;
+  // --position-player1 : 40%;
   .container {
     max-width: var(--ground-width);
     margin: 24px auto;
@@ -22,6 +22,8 @@
   .player1 {
     width: 20px;
     height: 20px;
+    top: var(--position-player1);
+    left: 25%;
     background-color: white; /* Color of the mark */
     border-radius: 50%; /* To make it circular */
     position: absolute;
@@ -30,7 +32,8 @@
   .player2 {
     width: 20px;
     height: 20px;
-    left: var(--position-player1);
+    right: 25%;
+    top: var(--position-player1);
     background-color: red; /* Color of the mark */
     border-radius: 50%; /* To make it circular */
     position: absolute;
