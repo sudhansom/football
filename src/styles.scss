@@ -4,7 +4,8 @@
   width: 20px;
   height: 20px;
   left: var(--position-player1);
-  background-color: rgb(136, 213, 147); /* Color of the mark */
+  background-image: url('./assets/images/ball.png');
+  background-size: cover;
   border-radius: 50%; /* To make it circular */
   position: absolute;
 }

@@ -25,6 +25,7 @@ export class PlaygroundComponent {
     // Position the mark at the clicked coordinates
     ball.style.left = x + 'px';
     ball.style.top = y + 'px';
+    ball.style.background = "../../../assets/images/ball.png"
 
     // Add background color dynamically
     ball.title = x + '  ' + y;

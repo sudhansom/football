@@ -18,6 +18,11 @@
     position: relative;
     left: 12px;
   }
+  .player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .player1 {
     width: 20px;
@@ -30,6 +35,7 @@
   }
 
   .player2 {
+    color: #fff;
     width: 20px;
     height: 20px;
     right: 25%;
