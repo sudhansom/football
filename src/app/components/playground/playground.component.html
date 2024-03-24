@@ -1,7 +1,6 @@
 <div class="container">
   <div class="playground"  (click)="placeBall($event)" (dblclick)="moveBall($event)">
-    <div draggable="true" [title]="'player1'" *ngFor="let item of [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]; let index" class="player player1" [style.--position-player1]="item * 50 + 'px'" [id]="'player1' + item">{{ index }}</div>
-    <div draggable="true" [title]="'player2'" *ngFor="let item of [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]; let index" class="player player2" [style.--position-player1]="item * 50 + 'px'" [id]="'player2' + item">{{ index }}</div>
-    <!-- <div class="moving-ball move"></div> -->
+    <div draggable="true" [title]="'player1'" *ngFor="let player of player1" class="player player1" [style.--player-color]="'white'" [style.--position-x]="player.x + 'px'" [style.--position-y]="player.y + 'px'" [id]="'player1' + player.mark">{{ player.mark }}</div>
+    <div draggable="true" [title]="'player2'" *ngFor="let player of player2" class="player player2" [style.--player-color]="'red'"  [style.--position-x]="player.x + 'px'" [style.--position-y]="player.y + 'px'" [id]="'player2' + player.mark">{{ player.mark }}</div>
   </div>
 </div>

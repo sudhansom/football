@@ -22,27 +22,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 20px;
+    height: 20px;
+    top: var(--position-y);
+    background-color: var(--player-color);
+    border-radius: 50%; /* To make it circular */
+    position: absolute;
   }
 
   .player1 {
-    width: 20px;
-    height: 20px;
-    top: var(--position-player1);
-    left: 25%;
-    background-color: white; /* Color of the mark */
-    border-radius: 50%; /* To make it circular */
-    position: absolute;
+    left: var(--position-x);
+
   }
 
   .player2 {
+    right: var(--position-x);
     color: #fff;
-    width: 20px;
-    height: 20px;
-    right: 25%;
-    top: var(--position-player1);
-    background-color: red; /* Color of the mark */
-    border-radius: 50%; /* To make it circular */
-    position: absolute;
   }
 
   .mark {

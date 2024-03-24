@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 
+import { player1, player2 } from './data';
+
 @Component({
   selector: 'app-playground',
   templateUrl: './playground.component.html',
@@ -10,6 +12,10 @@ export class PlaygroundComponent {
   ball: any = null;
   playerToMove : any = null;
   element: any;
+  player1 = player1;
+  player2 = player2;
+
+
 
   placeBall(event: MouseEvent): void {
     // Get the clicked position relative to the div
@@ -23,9 +29,12 @@ export class PlaygroundComponent {
     ball.className = 'ball';
 
     // Position the mark at the clicked coordinates
-    ball.style.left = x + 'px';
-    ball.style.top = y + 'px';
-    ball.style.background = "../../../assets/images/ball.png"
+    ball.style.left = x-10 + 'px';
+    ball.style.top = y-10 + 'px';
+    ball.style.background = "../../../assets/images/ball.png";
+
+    // ball.style.transform = translate(-50%, -50%);
+
 
     // Add background color dynamically
     ball.title = x + '  ' + y;
