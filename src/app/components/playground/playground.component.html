@@ -2,5 +2,6 @@
   <div class="playground"  (click)="placeBall($event)" (dblclick)="moveBall($event)">
     <div draggable="true" [title]="'player1'" *ngFor="let item of [ 10, 20, 30, 40, 50, 60 ]" class="player1" [style.--position-player1]="item * 5 + 'px'" [id]="'player1' + item"></div>
     <div draggable="true" [title]="'player2'" *ngFor="let item of [ 10, 20, 30, 40, 50, 60 ]" class="player2" [style.--position-player1]="item * 5 + 'px'" [id]="'player2' + item"></div>
+    <div class="moving-ball move"></div>
   </div>
 </div>

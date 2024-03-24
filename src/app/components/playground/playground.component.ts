@@ -57,6 +57,12 @@ export class PlaygroundComponent {
     event.dataTransfer?.setData('text/plain', 'draggedItem');
   }
 
+  @HostListener('click', ['$event'])
+  onClick(event: DragEvent) {
+    event.preventDefault();
+    console.log(event);
+  }
+
   @HostListener('dragover', ['$event.target', '$event'])
   onDragOver(target: HTMLElement, event: DragEvent) {
     event.preventDefault();

@@ -47,4 +47,17 @@
     border-radius: 50%; /* To make it circular */
     position: absolute;
   }
+  .moving-ball {
+    width: 20px;
+    height: 20px;
+    left: 30%;
+    top: 200px;
+    background-color: rgb(0, 255, 34); /* Color of the mark */
+    border-radius: 50%; /* To make it circular */
+    position: absolute;
+    transition: transform 3s;
+  }
+  .move {
+    transform: translateY(60%);
+  }
 }
