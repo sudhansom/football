@@ -1,6 +1,6 @@
 <div class="container">
   <div class="playground"  (click)="placeBall($event)" (dblclick)="moveBall($event)">
-    <div draggable="true" [title]="'player1'" *ngFor="let player of player1" class="player player1" [style.--player-color]="'white'" [style.--position-x]="player.x + 'px'" [style.--position-y]="player.y + 'px'" [id]="'player1' + player.mark">{{ player.mark }}</div>
-    <div draggable="true" [title]="'player2'" *ngFor="let player of player2" class="player player2" [style.--player-color]="'red'"  [style.--position-x]="player.x + 'px'" [style.--position-y]="player.y + 'px'" [id]="'player2' + player.mark">{{ player.mark }}</div>
+    <div draggable="true" [title]="player.x + ' ' + player.y" *ngFor="let player of player1" class="player player1" [style.--player-color]="'white'" [style.--position-x]="player.x + 'px'" [style.--position-y]="player.y + 'px'" [id]="'player1' + player.mark">{{ player.mark }}</div>
+    <div draggable="true" [title]="player.x + ' ' +player.y" *ngFor="let player of player2" class="player player2" [style.--player-color]="'red'"  [style.--position-x]="player.x + 'px'" [style.--position-y]="player.y + 'px'" [id]="'player2' + player.mark">{{ player.mark }}</div>
   </div>
 </div>
